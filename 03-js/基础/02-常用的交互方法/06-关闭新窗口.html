@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="Wopen()">打开窗口</button>
+    <button onclick="Wclone()">关闭窗口</button>
+
+    <script type="text/javascript">
+        var url;
+
+        function Wopen() {
+            url = window.open("https://www.baidu.com");
+        }
+
+        function Wclone() {
+            url = window.close();
+        }
+    </script>
+</body>
+</html>
