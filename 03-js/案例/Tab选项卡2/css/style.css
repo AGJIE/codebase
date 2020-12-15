@@ -1,0 +1,44 @@
+body,div,ul,li,a {
+    padding: 0;
+    margin: 0;
+}
+.content {
+    width: 200px;
+    height: 220px;
+    margin: 0 auto;
+}
+.content ul {
+    height: 20px;
+    list-style: none;
+}
+.content ul li {
+    width: 50px;
+    height: 20px;
+    float: left;
+}
+.content a {
+    width: 48px;
+    height: 18px;
+    font: 16px "微软雅黑";
+    text-decoration: none;
+    text-align: center;
+    line-height: 20px;
+    display: block;
+}
+.active {
+    position: relative;
+    border-top: 1px solid red;
+    border-left: 1px solid red;
+    border-right: 1px solid red;
+    border-bottom: 1px solid blue;
+    background-color: blue;
+    z-index: 10000;
+}
+.content div {
+    position: relative;
+    top: -1px;
+    width: 200px;
+    height: 200px;
+    background-color: blue;
+    border: 1px solid red;
+}
