@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script type="text/javascript">
+        var arr = [1,12,56,856,15,34,98,9];
+
+        //快速遍历
+        for(var i in arr) {
+            // console.log(i);
+            // console.log(arr[i]);
+        }
+
+        //for循环遍历
+        for(var j = 0; j < arr.length; j++) {
+            console.log(arr[j]);
+        }
+
+        // forEach循环
+        arr.forEach(function(item, index, array) {
+            console.log(item + "-" + index);
+        });
+    </script>
+</body>
+</html>

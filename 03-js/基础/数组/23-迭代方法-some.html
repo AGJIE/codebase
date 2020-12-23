@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script type="text/javascript">
+        // 对数组的每一项运行给定函数，如果该函数对任一项返回true，则返回true。  与every相反
+        var arr = [12,35,65,89,45,78,42,52,62,32,13];
+
+        var arr2 = arr.some(function (item, index, array) {
+            return item > 80;
+        });
+
+        console.log(arr2);
+    </script>
+</body>
+</html>

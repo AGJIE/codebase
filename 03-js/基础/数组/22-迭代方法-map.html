@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script type="text/javascript">
+    // 对数组中的每一项运行给定函数，返回每次函数调用的结果组成的数组。
+        var arr = [12,35,65,89,45,78,42,52,62,32,13];
+
+        var arr2 = arr.map(function (item, index, array) {
+            return item * 2;
+        })
+
+        console.log(arr2);
+    </script>
+</body>
+</html>

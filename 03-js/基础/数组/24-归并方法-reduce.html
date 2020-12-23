@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script type="text/javascript">
+        var arr = [12,35,65,89,45,78,42,52,62,32,13];
+
+        //使用reduce()方法可以执行数组中所有值之和的操作，比如：
+        var arr2 = arr.reduce(function (prev, cur, index, array) {
+            return prev + cur;
+        });
+
+        console.log(arr2);
+    </script>
+</body>
+</html>
