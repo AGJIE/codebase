@@ -1,0 +1,35 @@
+body,div,ul,li,a{
+    padding: 0;
+    margin: 0;
+}
+.content {
+    width: 200px;
+    height: 220px;
+    border: 1px solid rebeccapurple;
+    margin: 0 auto;
+}
+.content ul {
+    height: 20px;
+    list-style: none;
+}
+.content li {
+    float: left;
+    width: 50px;
+    height: 20px;
+}
+.content li a {
+    display: inline-block;
+    width: 50px;
+    height: 20px;
+    line-height: 20px;
+    text-align: center;
+    text-decoration: none;
+}
+.content .active {
+    height: 19px;
+    border-bottom: 1px solid blue;
+}
+.content div {
+    width: 200px;
+    height: 200px;
+}

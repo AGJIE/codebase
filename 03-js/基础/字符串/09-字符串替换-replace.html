@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script type="text/javascript">
+        //默认只能替换第一次出现的oldStr
+        var str = "Tom is a good man! Tom is a nice man";
+        var str2 = str.replace("Tom", "woTom");
+        console.log(str2);
+
+
+        //通过正则表达式可以实现全部替换
+        var str3 = str.replace(/man/g, "woMan");
+        console.log(str3);
+    </script>
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="aa">1</div>
+    <div class="aa">2</div>
+    <div class="aa">3</div>
+    <div class="aa">4</div>
+
+    <script type="text/javascript">
+        var divs = document.querySelectorAll(".aa");
+
+        for(var i = 0; i < divs.length; i++) {
+            divs[i].style.background = "red";
+        }
+    </script>
+</body>
+</html>
