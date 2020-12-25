@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script type="text/javascript">
+        // 用date()函数创建
+        var date1 = Date();
+        console.log(date1);
+        console.log(typeof date1);
+
+        //  构造函数创建(对象类型)
+        //无参数 获取当前时间
+        var date2 = new Date();
+        console.log(date2);
+
+        //参数是一个表示时间的字符串
+        var date3 = new Date("2020/12/25 20:50:13");
+        console.log(date3);
+
+        //参数是年、月、日、时、分、秒、毫秒
+        var date4 = new Date(2020, 11, 25, 20, 53, 32);
+        console.log(date4);
+
+        // 参数是一个数字
+        var date5 = new Date(1507702220603);
+        console.log(date5);
+
+    </script>
+</body>
+</html>
