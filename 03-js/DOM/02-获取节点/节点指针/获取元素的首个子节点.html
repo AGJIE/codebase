@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <h1>hello world!</h1>
+        <h1>hello world!</h1>
+        <h1>hello world!</h1>
+        <h1>hello world!</h1>
+    </div>
+
+    <script type="text/javascript">
+        var div = document.getElementsByTagName("div");
+        console.log(div);
+        var lastH1 = div[0].lastChild;
+        console.log(lastH1);
+
+        lastH1.innerHTML = "你好呀，加油，努力学习";
+    </script>
+</body>
+</html>
