@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        132598
+        <h1>12354</h1>
+        <ul>
+            <li>15976581</li>
+            <li>15976581</li>
+            <li>15976581</li>
+            <li>15976581</li>
+        </ul>
+        <a href="#"></a>
+        <br/>
+    </div>
+
+    <script type="text/javascript">
+        var ul1 = document.getElementsByTagName("ul")[0];
+        var list = ul1.previousSibling.previousSibling;
+        console.log(list);
+    </script>
+    <!--
+    访问兄弟节点
+    1. nextSibling 属性可返回某个节点之后紧跟的节点（处于同一树层级中）。
+        语法：
+            nodeObject.nextSibling
+        说明：如果无此节点，则该属性返回 null。
+    2. previousSibling 属性可返回某个节点之前紧跟的节点（处于同一树层级中）。
+        语法：
+            nodeObject.previousSibling
+        说明：如果无此节点，则该属性返回 null。
+
+    注意: 两个属性获取的是节点。Internet Explorer 会忽略节点间生成的空白文本节点（例如，换行符号），而其它浏览器不会忽略。
+-->
+</body>
+</html>

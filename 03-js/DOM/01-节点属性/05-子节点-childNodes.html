@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        123456
+        <a href="#"></a>
+        <ul>
+            <li>123456</li>
+            <li>123456</li>
+            <li>123456</li>
+            <li>123456</li>
+        </ul>
+        <h1></h1>
+    </div>
+
+    <script type="text/javascript">
+        var list = document.getElementsByTagName("div")[0].childNodes;
+        console.log(list);
+
+        for(var i = 0; i < list.length; i++) {
+            console.log(list[i].nodeType);
+            console.log(list[i].nodeName);
+            console.log(list[i].nodeValue);
+            console.log("------------------------------------------");
+        }
+    </script>
+
+<!--
+    访问选定元素节点下的所有子节点的列表，返回的值可以看作是一个数组，他具有length属性。
+    语法：
+        elementNode.childNodes
+    注意：
+        如果选定的节点没有子节点，则该属性返回不包含节点的 NodeList。
+
+    注意:
+        1. IE全系列、firefox、chrome、opera、safari兼容问题
+        2. 节点之间的空白符，在firefox、chrome、opera、safari浏览器是文本节点，所以IE是3，其它浏览器是7，
+-->
+</body>
+</html>
