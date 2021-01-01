@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="header">这里是h1元素包含的内容</h1>
+
+    
+    <script type="text/javascript">
+    // 以防止DOM树还没建完，就开始对DOM操作导致错误
+    // 但如加载100张图片，就解决不了,onload是在页面加载页面完成后执行，目前解决办法用JQuery   
+        window.onload = function() {
+            document.getElementById("header").style.color = "red";
+        }
+    </script>
+</body>
+</html>

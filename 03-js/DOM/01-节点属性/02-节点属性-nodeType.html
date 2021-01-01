@@ -6,24 +6,22 @@
     <title>Document</title>
 </head>
 <body>
-    <div>
-        54899
-        <!-- 你好 -->
-        <ul>
-            <li><a href="#"></a></li>
-        </ul>
-        123456
+    <div id="content">
+        这是一个元素节点
     </div>
 
     <script type="text/javascript">
-        var list = document.getElementsByTagName("div")[0].childNodes;
-        console.log(list);
+        var list = document.getElementById("content");
 
-        console.log(list[0].nodeType);
-        console.log(list[1].nodeType);
-        console.log(list[2].nodeType);
-        console.log(list[3].nodeType);
+        // 不兼容ie   原因：ie没有Node对象
+        if(list.nodeType == Node.ELEMENT_NODE) {
+            console.log("元素节点");
+        }
 
+        //兼容所有浏览器
+        if(list.nodeType == 1) {
+            console.log("元素节点2");
+        }
     </script>
 
     <!-- 
