@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script type="text/javascript">
+        /*
+            字符串字面量
+            字符串要用引号引起，单引号和双引号的作用是等效的
+
+            字符串是由一个一个字符组成的，获取一个字符串中字符的个数可以使用length
+        */
+        var name = "string2";
+        var age = '18';
+        console.log(name);
+        console.log(age);
+        console.log(name.length);
+
+        /*
+            ECMAScript 中的字符串是不可变的，也就是说，字符串一旦创建，它们的值就不能改变。
+            要改变某个变量保存的字符串，首先要销毁原来的字符串，然后再用另一个包含新值的字符串填充该变量
+        */
+        var str = "abc";
+        var str2 = 123 + "abc";
+
+        // 字符串拼接
+        var str3 = "159";
+        var str4 = "abd";
+        var str5 = str3 + str4;
+        console.log(str2);
+        console.log(str5);
+
+        // 小练习
+        var str6 = "159";
+        var str7 = 159;
+        console.log(str6 - str7);
+    </script>
+</body>
+</html>

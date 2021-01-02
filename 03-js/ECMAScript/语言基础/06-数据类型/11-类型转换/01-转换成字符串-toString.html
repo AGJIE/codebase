@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script type="text/javascript">
+    // 几乎每一个值都有toString()方法
+        var age = 18;
+        var strAge = age.toString();
+        console.log(typeof age);
+        console.log(typeof strAge);
+
+        var bool = true;
+        var strBool = bool.toString();
+        console.log(typeof bool);
+        console.log(typeof strBool);
+
+        // 数值类型的toString()，可以携带一个参数，输出对应进制的值
+        var num = 10;
+        console.log(num.toString());//默认十进制；
+        console.log(num.toString(8));//八进制   
+        console.log(num.toString(16));//十六进制
+        console.log(num.toString(2));//二进制
+    </script>
+</body>
+</html>

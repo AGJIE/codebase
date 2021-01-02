@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script type="text/javascript">
+        /*
+            NaN 非数值（NOt a Number)
+            NaN与任何值都不相等，包括它本身
+        */
+        console.log("abc" / 18); //NaN
+        console.log(NaN == NaN); //false
+
+        // isNaN() :任何不能被转换为数值的值都会导致这个函数返回 true 
+        console.log(isNaN("bule")); //true
+        console.log(isNaN("a")); //true
+        console.log(isNaN(true)); //false
+        console.log(isNaN(NaN)); //true
+    </script>
+</body>
+</html>

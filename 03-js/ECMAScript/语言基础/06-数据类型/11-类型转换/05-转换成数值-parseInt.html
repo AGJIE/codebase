@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script type="text/javascript">
+    // parseInt()把字符串转换成整数
+        var num1 = parseInt(true);//NaN
+        var num2 = parseInt(undefined); // NaN
+        var num3 = parseInt("hello"); // NaN
+        var num4 = parseInt(" "); // NaN
+        var num5 = parseInt(123); // 123
+        var num6 = parseInt("abc123");  // NaN 如果第一个字符不是数字或者符号就返回NaN
+        var num7 = parseInt("123abc");  // 123 如果第一个字符是数字会解析知道遇到非数字结束
+        var num8 = parseInt(null);//NaN
+
+        // parseInt()可以传递两个参数，第一个参数是要转换的字符串，第二个参数是要转换的进制
+        var num9 = parseInt(10, 10);
+        var num10 = parseInt(10, 16);
+        var num11 = parseInt(10, 8);
+        var num12 = parseInt(10, 2);
+        var num13 = parseInt("A");
+        var num14 = parseInt("0xA");
+    </script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script type="text/javascript">
+        /*
+            Boolean类型有两个字面量：true和false，并且区分大小写！
+            虽然Boolean 类型的字面值只有两个，但 ECMAScript 中所有类型的值都有与这两个 Boolean 值等价的值
+
+            任何类型可以转换成Boolean类型，一般使用在流程控制语句后面
+
+            boolean
+                        true                            false
+            Number      任何非零数字值（包括无穷大）        0和NaN
+            String      任何非空字符串                    ""
+            Object      任何对象                          null 
+            boolean     true                             false
+            undefined                                    undefined
+        */
+        var bool = Boolean("a");
+        console.log(bool);
+        var bool2 = Boolean(100);
+        console.log(bool2);
+    </script>
+</body>
+</html>

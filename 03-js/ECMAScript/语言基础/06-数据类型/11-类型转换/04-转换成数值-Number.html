@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script type="text/javascript">
+    // Number()可以把任意值转换成数值，如果要转换的字符串中有一个不是数值的字符，返回NaN
+        var num1 = Number(true);//true:1  false:0
+        var num2 = Number(undefined); // NaN
+        var num3 = Number("hello"); // NaN
+        var num4 = Number(" "); // 0
+        var num5 = Number(123); // 123
+        var num6 = Number("abc123");  // NaN
+        var num7 = Number("123abc");  // NaN
+        var num8 = Number(null);
+
+    </script>
+</body>
+</html>

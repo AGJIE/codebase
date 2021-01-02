@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 点击链接不做任何事情: -->
+    <a href="javascript:;">text</a>
+    <a href="javascript: void(0);">text2</a>
+    <a href="https://www.baidu.com" onclick="return false">text3</a>
+
+    <!-- 点击链接后，响应用户自定义的点击事件: -->
+    <!-- 这里表示这个链接不做跳转动作，执行onClick事件 -->
+    <a href="javascript: void(0);" onclick="alert('你好')">text4</a>
+    <a href="javascript: all(); void(0);">text4</a>
+
+    <script type="text/javascript">
+        function all() {
+            console.log("你好");
+        }
+    </script>
+</body>
+</html>
