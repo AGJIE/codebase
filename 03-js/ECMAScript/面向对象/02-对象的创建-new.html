@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script type="text/javascript">
+    /* 利用 new object 创建对象 */
+    var obj = new Object();
+
+    obj.name = "小周";
+    obj.age = 18;
+    obj.sayHi = function() {
+        console.log("nihao");
+    }
+
+    //调动对象
+    console.log(obj.name);
+    console.log(obj["age"]);
+    obj.sayHi();
+    </script>
+</body>
+</html>
