@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script type="text/javascript">
+        function Person(name, age, sex) {
+            this.name = name;
+            this.age = age;
+            this.sex = sex;
+
+            this.writeHello = function() {
+                console.log("hello：" + name + age + sex);
+            }
+        }
+
+        Person.prototype.price = 18;
+
+        var obj1 = new Person("德国蟑螂", 18, "男");
+        var obj2 = new Person("飞天魔盗团", 26, "女");
+        var obj3 = new Object();
+
+        console.log(obj1.price == obj2.price);
+        console.log(obj2.price);
+        console.log(obj1.price);
+        obj1.writeHello();
+        obj2.writeHello();
+    </script>
+</body>
+</html>

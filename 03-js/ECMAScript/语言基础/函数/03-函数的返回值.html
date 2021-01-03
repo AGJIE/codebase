@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script type="text/javascript">
+    //  return  返回值
+        function text(num1, num2) {
+            return num1 + num2;
+        }
+
+        var result = text(100, 1);
+        console.log(result);
+
+    //   没有return 默认undefined
+        function text2() { 
+            console.log("执行了");
+        }
+
+        var result2 = text2();
+        console.log(result2);
+
+    //  只返回一个值，不能直接返回多个值，但如果你这样做了它也不会报错，而是以一种不符合预料的方式执行。
+        function text3(num1, num2, num3) {
+            return num1,num2;
+        }
+
+        var result3 = text3(15, 62, 11);
+        console.log(result3);
+
+    // 返回多个值可以用数组
+        function text4(num1, num2, num3) {
+            num1 += num3;
+            num2 += num3;
+            return [num1, num2]
+        }
+
+        var arr = text4(15, 23, 10);
+        console.log(arr);
+    </script>
+</body>
+</html>
