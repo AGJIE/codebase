@@ -8,13 +8,20 @@
 <body>
     
     <script type="text/javascript">
-        //定义函数
+        //函数声明
         function result() {
             alert("函数调用了");
         } 
 
         //调用
         result();
+
+        //函数表达式
+        var fun = function() {
+            alert("函数表达式被调用了");
+        }
+
+        fun();
     </script>
 </body>
 </html>

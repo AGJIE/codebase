@@ -6,14 +6,18 @@
     <title>Document</title>
 </head>
 <body>
-    
+
     <script type="text/javascript">
-        function maxNum(num1, num2) {
-            return num1 > num2 ? num1 : num2;
+        function writeHello(value) {
+            console.log(value);
         }
 
-        console.log(MaxNum(10, 18));
-        console.log(MaxNum(15, 10));
+        function test(fun1, value) { 
+            console.log("主函数被调用了");
+            fun1(value);
+         }
+
+        test(writeHello, "回调函数")
     </script>
 </body>
 </html>

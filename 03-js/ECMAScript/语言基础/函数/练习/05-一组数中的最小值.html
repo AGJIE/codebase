@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script type="text/javascript">
+        var arr = [15,98,56,82,49,85,62,48,95,65];
+
+        // 最原始的办法
+        function minArray(arr) {
+            if(Array.isArray(arr)){
+                var min = arr[0];
+                for(var i = 1; i < arr.length; i++){
+                    if(!(min < arr[i])) {
+                        min = arr[i];
+                    }
+                }
+                return min;
+            }
+        }
+
+        console.log(minArray(arr));
+    </script>
+</body>
+</html>

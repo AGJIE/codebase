@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script type="text/javascript">
+        /*
+            只能操作一个值的操作符叫做一元操作符，分为：前置型和后置型
+            顾名思义，前置型应该位于要操作的变量之前，而后置型则应该位于要操作的变量之后
+            执行前置递增和递减操作时，变量的值都是在语句被求值以前改变的。
+        */
+       var i = 10;
+       var num1 = i++ + 10;
+       console.log(num1);
+       console.log(i);
+    
+       var j = 10;
+       var num2 = ++j + 10;
+       console.log(num2);
+       console.log(j);
+
+       //递减也是这样
+    //    var a = 1; var b = ++a + ++a; console.log(b); //5
+    //    var a = 1; var b = a++ + ++a; console.log(b); //4
+    //    var a = 1; var b = a++ + a++; console.log(b); //3
+    //    var a = 1; var b = ++a + a++; console.log(b);//4    
+    </script>
+</body>
+</html>
