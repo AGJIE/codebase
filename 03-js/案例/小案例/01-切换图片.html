@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <a href="javascript:void(0);" id="btnImage">切换</a>
+        <div>
+            <img src="image2/1-small.jpg" alt="美女" id="img">
+        </div>
+    </div>
+
+    <script type="text/javascript">
+        window.onload = function() {
+            var btnImage = document.getElementById("btnImage");
+            var img = document.getElementById("img");
+            var bool = true;
+            btnImage.onclick = function () {
+                if(bool){
+                    bool = false;
+                    img.setAttribute("src", "image2/2-small.jpg");
+                } else {
+                    bool = true;
+                    img.setAttribute("src", "image2/1-small.jpg");
+                }
+            }
+        }
+    </script>
+</body>
+</html>

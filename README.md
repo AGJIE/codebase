@@ -1,5 +1,59 @@
 # 语言基础
 
+## 执行顺序
+
+检查装载：会先检测代码的语法错误，进行变量、函数的声明
+
+执行阶段：变量的赋值、函数的调用等，都属于执行阶段。
+
+
+
+## 数组
+
+数据的有序列表，可以存放任意类型的数据，数组的大小可以动态调整。
+
+### 创建数组方式
+
+#### 数组字面量
+
+```
+var arr = [];
+var arr2 = [1,2,3];
+var arr3 = ["a", "b"];
+var arr4 = [true, 1, 2, "white", {}];
+```
+
+#### Array的构造函数
+
+```javascript
+var arr4 = new Array();
+var arr5 = new Array(10);//创建长度为10的数组
+var arr6 = new Array("black", "white", "red");//创建一个包含3个字符串的数组
+var arr7 = new Array(1, true, "white", {}); 
+```
+
+### 获取值与赋值
+
+```javascript
+var colors = ["red", "black", "white"];
+
+//获取值
+var str = colors[0];
+
+//赋值
+colors[3] = "yellow";
+```
+
+### 数组的长度：length
+
+```
+//获取或设置数组中元素的个数
+var sum = [12,35,62,84,59,16,15,27];
+
+var total = sum.length;//获取数组中元素的个数
+sum.length = 4;//设置数组中元素的个数
+```
+
 ## 函数
 
 函数：函数就是可以重复执行的代码块
@@ -68,35 +122,60 @@ var add = function(num1, num2) {
 !function text() {...}
 ```
 
+两者区别：
+
+函数表达式：函数只有在var语句声明之后才能被调用，函数表达式是在函数运行阶段才赋值给变量
+
+函数声明：函数可以在function声明之前被调用，函数表达式是在代码运行阶段之前, 也就是代码解析阶段赋值
+
 ### 匿名函数
 
-没有命名的函数
+匿名函数，从字面意思理解，没有名字的函数
 
-作用：一般用在绑定事件的时候
+用法：
 
-语法：
+- 赋值
+- 自我执行
 
-```
-function () {
-	...
+#### 作用：
+
+##### 赋值给某一个事件
+
+```javascript
+windon.onload = function() {
+	alert("hello");
 }
 ```
 
-### 函数自执行
+##### 赋值给一个变量
 
 ```javascript
-//第一种
+var show = function() {
+	alert("hello");
+}
+
+show();
+//注意：使用匿名函数表达式时，函数的调用语句，必须放在函数声明语句之后
+```
+
+
+
+#### 自执行函数
+
+```javascript
+//第一种 尽量少用
 var fun = function () {
     ...
 }();
 
-//第二种
+//第二种  推荐
 (function () {
+    //这里是块级作用域
     ...
 })();
     
-//第三种
-var fun = function() {
+//第三种 ! + - ~ 
+!function() {
     ...
 }();
 ```
@@ -139,7 +218,27 @@ var fun = function() {
 
 #### 函数提升
 
-JavaScript解析器首先会把当前作用域的函数声明提前到整个作用域的最前面
+函数声明特征：就是函数声明提升，意思是执行代码之前先读取函数声明。不管函数声明写在前面，还是后面，都会出现函数声明的提升。
+
+```javascript
+add(1, 2); //弹窗显示：3
+
+function add(x, y){
+	alert(x+y);
+}
+```
+
+函数声明与函数表达式的区别：函数表达式在使用前必须先赋值
+
+```
+add(1, 2); //无弹窗，报错： add is not a function
+
+var add = function(x, y) {
+	alert(x+y);
+}
+```
+
+解析器在向执行环境中加载数据时，解析器会率先读取函数声明，并使其在执行任何代码前可用；至于函数表达式，则必须等到解析器执行到它的所在的的代码行，才会真正的被解析。函数表达式中，创建的函数叫做匿名函数，因为function关键字后面没有标识符。
 
 ### 递归
 
@@ -190,59 +289,241 @@ typeof  f1
 函数作为方法的参数
 函数作为方法的返回值
 
-#### 工厂模式
+# 面向对象
+
+## 对象
+
+### 面向对象
+
+可以创建自定义的类型、很好的支持继承和多态。面向对象的语言c++/java/c#...
+
+- 面向对象的特征：封装、继承、多态
+- 万物皆对象：世间的一切事物都可以用对象来描述
+
+### 基于对象
+
+无法创建自定义的类型、不能很好的支持继承和多态。基于对象的语言JavaScript
+
+### JavaScript对象
+
+#### 无序属性的集合
+
+其属性可以包含基本值、对象或函数。对象就是一组没有顺序的值。我们可以把JavaScript中的对象想象成键值对，其中值可以是数据和函数。
+
+#### 对象的行为和特征
+
+- 特征---属性
+- 行为---方法
+
+### 创建对象
+
+#### **通过“字面量”创建**
 
 ```javascript
-function createObject(name, age, sex) {
-    var obj = {};
-    obj.name = name;
-    obj.age = age;
-    obj.sex = sex;
-    obj.getHello = function () {
-        console.log("你好");
-    }
-    return obj;
-}
+var obj = {};//空对象
 
-var person1 = createObject();
+var obj2 = {
+	name: "num1",
+	age: 18,
+	sex: "男",
+	writeHello: function() {
+		alert("你好" + this.name);
+	}
+}
 ```
 
-把实现同一件事情的相同的代码放到一个函数中，以后如果再想实现这个功能，不需要从新的编写这些代码来了，只需要执行当前的函数即可-->"函数的封装"-->"低耦合高内聚":减少页面中的冗余代码，提高代码的重复利用率
+#### **通过“object”创建**
 
-即：把实现同一事情的相同代码，放到一个函数中，以后如果再想实现这个功能，就不需要重新编写这些代码了，只要执行当前的函数即可，
+```javascript
+var obj = new Object();
 
-这就是函数的封装，体现了高内聚、低耦合的思想：减少页面的中的冗余代码，提高代码的重复利用率：
+var obj2 = new Object();
+obj2.name = "你好";
+obj2.age = 18;
+obj2.writeHello = function() {
+	alert("Hello");
+}
+```
 
-#### 构造函数模式
+#### **通过“构造函数”创建。**
 
 ```javascript
 function Person(name, age, sex){
-    this.name = name;
-    this.age = age;
-    this.sex = sex;
-    this.sayName = function() {
-        alert(this.name)
-    }
-};
-
-var person1 = new Person("Greg", 18, "男");
-```
-
-#### 原型模式
-
-```javascript
-function Person(name, age, sex) {
-    this.name = name;
-    this.age = age;
-    this.sex = sex;
+	this.name = name;
+	this.age = age;
+	this.sex = sex;
+	this.writeHello = function() {
+		document.write("Hello");
+	}
 }
 
-Person.prototype.sayName = function(){
-    alert(this.name);
-};
-
-var person1 = new Person();
-var person2 = new Person();
-alert(person1.sayName == person1.sayName); //true
+var obj = new Person("卡卡颂", 16, "女")
 ```
+
+### this
+
+谁调用this就是谁
+
+```javascript
+//  1
+function test() {
+	console.log(this);
+}
+
+test();//window.test();
+
+// 2
+p1.sayHi();  //此时的this->p1
+
+// 3
+构造函数中的this，始终是new的当前对象
+```
+
+### JSON
+
+#### 什么是JSON?
+
+- JavaScript Object Notation（JavaScript对象表示形式）
+- JavaScript的子集
+
+#### JSON和对象字面量的区别
+
+JSON的属性必须用双引号引号引起来，对象字面量可以省略
+
+```javascript
+//对象字面量
+var obj = {
+    name: "犯人在跳舞",
+    age: 18,
+    sayHi: function() {
+        alert("hi");
+    }
+}
+
+//JSON
+{
+    "name": "犯人在跳舞",
+    "age": 18,
+    "sayHi": function() {
+        alert("hi");
+    }
+}
+```
+
+### 遍历对象的属性
+
+```javascript
+var obj = {};
+
+for(var key in obj){
+	console.log(key + "===" + obj[key]);
+}
+```
+
+## 数据类型
+
+### 基本类型
+
+Number、String、Boolean
+Undefined、Null
+
+### 引用类型
+
+Object、Array、Date等
+
+### 包装基本类型-引用类型
+
+## 内置对象
+
+### Array
+
+#### 常用方法
+
+```javascript
+var arr = [12,15,16,18,9,23,24,29,57,68,84,512];
+
+//尾部添加元素
+arr.push(17);
+
+//头部添加元素
+arr.unshift(72);
+
+//尾部删除元素
+arr.pop();
+
+//头部删除元素
+arr.shift();
+
+//数组拼接成字符串
+arr.join(",");
+
+//数组倒置
+var arr = arr.reverse();
+
+// 截取数组 slice  start-end
+var arr2 = ["html","css","javascript","jQuery","Ajax"];
+var arr3 = arr2.slice(0,2); //["html","css"]
+
+//数组插入替换删除-splice
+var arr4 = arr2.splice(2,0,"hello");//["html","css","hello","javascript","jQuery","Ajax"]
+
+//数组合并-多个数组或元素合并-concat
+var arr5 = [12,3,65];
+var arr6 = [16,59,89,68];
+var arr7 = arr5.concat(arr6);
+
+//从左侧数组查找下标-indexOf
+var arr8 = [1,2,3,4,5,6,7,8,9];
+var index = arr8.indexOf(8);
+
+//从右侧数组查找下标-lastIndexOf
+var arr9 = [1,2,3,4,5,6,7,8,9];
+var index2 = arr9.lastIndexOf(8);
+
+//数组排序
+var arr10 = arr9.sort();
+
+//检查数组
+instanceof
+
+//判断是否是数组
+Array.isArray()	//HTML5中新增
+```
+
+#### 迭代方法
+
+every()、filter()、forEach()、map()、some()
+
+#### 归并方法
+
+reduce()、reduceRight()
+
+# 事件
+
+## 事件三要素
+
+事件源：
+
+```
+//获取事件源
+document.getElementById(“box”);
+```
+
+事件：
+
+```
+//绑定事件
+box.onclick = function(){ 程序 };  //onclick 点击事件
+```
+
+事件驱动程序：
+
+```
+// 事件驱动程序
+box.onclick = function(){ 程序 };  //程序 关于DOM的操作
+```
+
+## 事件有哪些
+
+![img](file:///C:\Users\admin\AppData\Local\Temp\ksohtml\wps25CC.tmp.jpg)
 
