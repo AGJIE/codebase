@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="fn()">触发</button>
+    <div id="div1">触发</div>
+    <h1 id="btn">触发</h1>
+
+    <script type="text/javascript">
+        //1.事件源（引发后续事件的标签）
+        //2.事件（js已经定义好，直接使用）
+        //3.事件驱动程序（对样式和html的操作）（DOM操作）
+        var div1 = document.getElementById("div1");
+        var btn = document.getElementById("btn");
+        //匿名绑定
+        div1.onclick = function () {
+            alert("匿名事件被触发了");
+        }
+
+        //函数名绑定
+        function test() {  
+            alert("函数名绑定触发");
+        }
+
+        btn.onclick = test;//不写括号，否则成为了返回值（2.用函数名绑定）
+
+        //行内绑定
+        function fn() { 
+            alert("行内绑定事件被触发");
+        }
+    </script>
+</body>
+</html>

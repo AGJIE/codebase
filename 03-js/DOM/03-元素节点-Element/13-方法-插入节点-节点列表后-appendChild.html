@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul id="content">
+        <li>卡卡颂</li>
+        <li>卡坦岛</li>
+    </ul>
+    <button id="btn">插入</button>
+
+    <script type="text/javascript">
+    /*
+            在指定节点的最后一个子节点列表之后添加一个新的子节点。
+            语法:
+                appendChild(newnode)
+            参数:
+                newnode：指定追加的节点。
+    */
+        window.onload = function() {
+            var content = document.getElementById("content");
+            var btn = document.getElementById("btn");
+
+            btn.onclick = function () {  
+                var p = document.createElement("li");
+                p.innerHTML = "犯人在跳舞";
+                content.appendChild(p);
+            }
+
+        }
+    </script>
+</body>
+</html>

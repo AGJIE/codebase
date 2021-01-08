@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style type="text/css">
+        body,div,a {
+            margin: 0;
+            padding: 0;
+        }
+        html,body {
+            height: 100%;
+        }
+        .public {
+            height: 100%;
+            background-color: yellow;   
+        }
+        .content {
+            position: absolute;
+            right: 0;
+            bottom: 0;
+            width: 250px;
+            height: 200px;
+            background-color: red;
+        } 
+        a {
+            float: right;
+            width: 20px;
+            height: 20px;
+            line-height: 20px;
+            text-align: center;
+            background-color: #ccc;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="public">
+        <div class="content">
+            <a href="javascript:void(0);" id="exit">x</a>
+        </div>
+    </div>
+
+    <script type="text/javascript">
+        window.onload = function () {  
+            var exit = document.getElementById("exit");
+
+            exit.onclick = function() {
+                var par = this.parentNode.parentNode;
+                console.log(par);
+                par.removeChild(this.parentNode);
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul>
+        <li>卡卡颂</li>
+        <li>卡坦岛</li>
+        <li>荣耀之城</li>
+        <li>行动代号</li>
+    </ul>
+    <button id="btn">删除节点</button>
+
+    <script type="text/javascript">
+        window.onload = function () {  
+            /*
+                 删除节点removeChild()
+                removeChild() 方法从子节点列表中删除某个节点。如删除成功，此方法可返回被删除的节点，如失败，则返回 NULL。
+                语法:
+                    nodeObject.removeChild(node)
+                参数:
+                    node ：必需，指定需要删除的节点。
+            */
+            var ul = document.getElementsByTagName("ul")[0];
+            var btn = document.getElementById("btn");
+
+            btn.onclick = function () {  
+                while(ul.childNodes.length != 0){
+                    ul.removeChild(ul.firstChild);
+                }
+            }
+        }
+    </script>
+</body>
+</html>

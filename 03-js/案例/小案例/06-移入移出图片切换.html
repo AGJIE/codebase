@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style type="text/css">
+        img {
+            cursor: pointer;
+            border: 1px solid red;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <img src="image2/jd1.png" alt="图片" id="img">
+    </div>
+
+    <script type="text/javascript">
+        window.onload = function() {
+            var img = document.getElementById("img");
+
+            img.onmouseover = function () {  
+                this.src = "image2/jd2.png";
+            }
+
+            img.onmouseout = function () {  
+                this.src = "image2/jd1.png";
+            }
+        }
+    </script>
+</body>
+</html>
