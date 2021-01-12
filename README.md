@@ -1,10 +1,26 @@
-# 语言基础
+# JavaScript
+
+### ECMAScript
+
+描述了JS的语法和基本对象。
+
+### DOM
+
+处理网页内容的方法和接口
+
+### BOM
+
+与浏览器交互的方法和接口
+
+# ECMAScript
 
 ## 执行顺序
 
 检查装载：会先检测代码的语法错误，进行变量、函数的声明
 
 执行阶段：变量的赋值、函数的调用等，都属于执行阶段。
+
+## 声明语句
 
 
 
@@ -56,19 +72,122 @@ sum.length = 4;//设置数组中元素的个数
 
 ## 函数
 
-函数：函数就是可以重复执行的代码块
+提示栏
 
-### 函数定义 | 调用：
+```
+1. 函数声明与函数表达式
+2. 递归
+
+```
+
+摘要栏
+
+```
+函数：函数就是可以重复执行的代码块
+```
+
+笔记栏
+
+### 函数定义
 
 ```javascript
-//定义
-function add() { //add 函数名
-	//程序
+//函数声明
+function add(num1, num2) {
+	return num1+num2;//返回两个值之和
 }
 
-//调用
-add();
+//计算阶乘-递归函数
+function factorial(x) {
+    if(x <= 1) {
+        return 1;
+    }
+    return x * factorial(x-1);
+}
+
+//函数表达式
+//第一种  把函数表达式赋值给变量
+var add = function(num1, num2) {
+	return num1+num2;
+}
+
+// 函数表达式可以包含名称。这递归很有用
+var total = function sum(num1) {
+    return num1 * num1;
+}
+
+// 函数表达式也可以作为参数传递给其他参赛
+array.sort(function (a, b) {
+    return a-b;
+})
+
+// 函数表达式有时定义后立即使用
+var tensquared = (function (a, b) {
+    return a + b;
+}(12, 34));//46
+
+//函数表达式适合用来定义只会用到一次的函数
+//函数命名通常以动词或以动词为前缀的词组，多个单纯遵循驼峰命名法
+
+//函数声明与函数表达式区别
+//函数声明语句可以被在它定义之前出现的代码所调用
+//函数表达式，调用函数前，要先引用它，而使用一个函数表达式定义的函数之前，必须要先赋值给一个变量，变量的声明提前，但是其赋值是不会提前的，所以，以表达式方式定义的函数在定义之前无法调用。
+
+
+//大多数函数包含一条return语句。return语句导致函数停止执行，并返回它的表达式（如果有的话）的值给调用者。若没有，默认返回undefined
+
+//函数声明语句可以出现全局代码里，或者内嵌在其他函数中，但不能出现在循环、条件判断、try/cache/finally以及with语句中
+
+//函数表达式可以出现在JavaScript代码的任何地方
 ```
+
+#### 嵌套函数
+
+```javascript
+function total () {
+    function sum(a){
+        return a * a
+    }
+    
+    return Math.sqrt(sum(10) + sum(15));
+}
+//在JavaScript里，函数可以嵌套在其他函数里。嵌套函数其变量作用域规则：它们可以访问嵌套它们（或多重嵌套）的函数的参数和变量。
+```
+
+### 函数调用
+
+```javascript
+//有四种方式调用JavaScript函数
+/*
+	作为函数
+	作为方法
+	作为构造函数
+	通过它们的call()和apply方法间接调用
+*/
+
+// 函数调用
+function sum(num1, num2) {
+    return num1 * num2;
+}
+sum(16, 68);
+
+// 方法调用
+var obj = {
+    name: "卡坦岛",
+    writeHello: function() {
+        console.log("hello world");
+    }
+}
+obj.writeHello();
+
+/*
+	函数调用与方法调用
+	上下文
+		函数调用，全局对象成为上下文，严格模式下this为undefined，函数调用的函数通常不使用this，可以用来判断当前是否是严格模式
+		方法调用，对象成为上下文
+*/
+```
+
+
 
 ### 传递参数
 
@@ -96,31 +215,6 @@ ECMAScript中，所有函数的参数都是按值传递的
 - 每个函数都有一个返回值，返回值通过“*return*”进行设置
 - 在函数中，一旦执行完“return”语句，后续语句将不再执行；
 - “return”的值只能有一个。如果需要函数返回多个值，只有将值组合成一个对象或数组进行返回
-
-### 定义方式
-
-#### 函数声明
-
-```
-function add(num1, num2) {
-	return num1+num2;
-}
-```
-
-#### 函数表达式
-
-```javascript
-//第一种
-var add = function(num1, num2) {
-	return num1+num2;
-}
-
-//第二种
-(function text() {....})
-
-//第三种
-!function text() {...}
-```
 
 两者区别：
 
@@ -288,6 +382,24 @@ var add = function(x, y) {
 typeof  f1
 函数作为方法的参数
 函数作为方法的返回值
+
+## 内置对象
+
+### 正则表达式-RegExp
+
+#### 创建RegExp对象
+
+##### 通过“字面量”创建
+
+```javascript
+var reg = /s$/;
+```
+
+##### 通过“RegExp”创建
+
+```javascript
+var reg = new RegExp("s$");
+```
 
 # 面向对象
 
@@ -498,6 +610,315 @@ every()、filter()、forEach()、map()、some()
 
 reduce()、reduceRight()
 
+# DOM
+
+DOM   (文档对象模型)
+
+- 为文档提供了结构化表示，并定义了如何通过脚本来访问文档结构。
+- 目的其实就是为了能让js操作html元素而制定的一个规范。
+
+节点：
+
+- 文档节点（document）
+- 元素节点
+- 文本节点
+- 属性节点
+
+## 获取节点
+
+提示栏
+
+```
+1. 通过id、标签、class、css选择器获取节点？
+2. node对象与Element节点的属性、父子节点、兄弟节点、子节点第一个节点、最后一个节点、节点类型、节点名称、节点值
+3. 
+```
+
+摘要栏
+
+```
+1.节点的获取不单是在document节点调用方法，也可以在其他节点上调用
+2.节点类型可用于判断当前节点是属于什么节点?文本？标签？属性？
+3.node对象与ELement节点属性的区别？
+	Element节点属性过滤文本节点与注释节点
+```
+
+笔记栏
+
+```javascript
+//通过id
+document.getElementById("demo");
+//通过标签名
+document.getElementsByTagName("div")
+//通过class
+document.getElementsByClassName("a"); //通过类名查找 HTML 元素在 IE 5,6,7,8 中无效
+//通过name
+document.getElementsByName("username");
+//通过CSS选择器选取元素
+document.querySelectOr("ul li"); //返回与该模式匹配的第一个元素
+document.querySelectAll("div ul");//返回与该模式匹配的所有元素
+
+/*
+	注意：前缀为document，意思是在document节点下调用这些方法，当然也可以在其他的元素节点下调用
+*/
+```
+
+## Node对象
+
+Document文档对象、Element对象、文档中表示文本的Text对象、都是Node对象
+
+笔记栏
+
+```javascript
+//父节点-parentNode
+var div1 = document.getElementsByTagName("div")[0];
+var parent = div1.parentNode;
+
+//子节点-childNodes
+var listNode = div1.childNodes;
+
+//子节点的第一个-firstChild
+var firstChild = div1.firshChild;
+
+//子节点的最后一个-lastChild
+var lastChild = div1.lastChild;
+
+//兄弟节点-该节点的上一个节点-nextSibling
+var next = div1.nextSibling;
+
+//兄弟节点-该节点的下一个节点-previoursSibling
+var previours = div1.previoursSibling;
+
+//节点类型-nodeType
+var node = div1.nodeType;
+
+//节点值-nodeValue
+var node = div1.nodeValue;
+
+//节点名称-nodeName
+var name = div1.nodeName;
+```
+
+## Element对象
+
+它将文档看做是Element对象树，忽略部分文档：Text和Comment节点
+
+笔记栏
+
+```javascript
+//子节点-children
+//非标准属性，只包含Element对象
+var div1 = document.getElementById("div1");
+var list = div1.children;
+
+//子节点的第一个-firstElementChild
+var first = div1.firstElementChild; //只代表子Element;
+//子节点的最后一个-lastElementChild.
+var last = div1.lastElementChild;//只代表子Element;
+
+//兄弟节点-该节点的上一个节点-nextElementSibling
+var next = div1.nextElementSibling; //只代表兄弟Element;
+//兄弟节点-该节点的下一个节点-previoursElementSibling
+var pre = div1.previoursElementSibling; //只代表兄弟Element;
+```
+
+## 属性
+
+### HTML属性作为Element的属性
+
+表示HTML文档元素的HTMLElement对象定义了读/写属性，它们映射了元素的HTML属性。
+
+```javascript
+//如查询一张图片的URL
+var img = document.getElementById("image");
+var imgUrl = img.src; //src属性是图片的url
+
+// 同样可以为img元素设置属性
+img.src = "https://wwww.xxx.com";
+```
+
+- 有些HTML属性的值通常是字符串。当属性为布尔值或数值，属性也是布尔值或数值，而不是字符串
+- 任何HTML元素的style属性值是CSSStyleDeclaration对象，而不是字符串
+
+注意：这个基于属性的API用来获取和设置属性值，但没有定义任何从元素中删除属性的方法。奇怪的是，delelte操作符也无法完成此目的。
+
+### 获取和设置非标准的HTML属性
+
+getAttribute()和setAttribute()方法，用来查询和设置非标准的HTML属性，也可用来查询和设置XML文档中元素上的属性
+
+```javascript
+var image = document.image[0];
+var width = parseInt(image.getAttribute("src"));
+image.setAttribute("class", "imgAll");s
+```
+
+与基于属性的API区别：
+
+- 属性值都被看做是字符串。getAttribute()不返回数值、布尔值或对象
+- 方法使用标准属性名，名称为JavaScript保留字时也不例外。对于HTML元素来说。属性名不区分大小写
+
+### 检测命名属性是否存在-hasAttribute()
+
+```javascript
+var img = document.image[0];
+var bool = img.hasAttribute("src");
+```
+
+### 完全删除属性-removeAttribute()
+
+```javascript
+var img = document.image[0];
+var bool = img.removeAttribute("src");
+```
+
+### 数据集属性
+
+在HTML5文档中，任意以**”data-“** 为前缀的小写的属性名字都是合法的。这些**“数据集属性”**将不会对其元素的表现产生影响，它们定义了一种标准的、附加额外数据的方法，并不是在文档合法性上做出让步。
+
+HTML5还在Element对象上定义了dataset属性。指代一个对象，它的各个属性对应于去掉前缀的**data-属性**。因此**dataset.x**应该保存**data-x**属性的值。
+
+带连字符的属性对应于驼峰命名法属性名：**data-jquery-test**属性就变成**dataset.jqueryTest**属性。
+
+### 作为Attr节点的属性
+
+```javascript
+document.body.attributes[0];//获得所有属性节点，返回一个数组（伪数组）
+```
+
+针对非Element对象的任何节点，该属性为null，对于Element对象，attributes属性是只读的类数组对象，它代表元素的所有属性，可以用数字索引访问或属性名索引
+
+当索引attributes对象时得到的值是Attr对象。Attr的name和value属性返回该属性的名字和值
+
+## 元素的内容
+
+### 作为HTML的元素内容
+
+- 从对象的起始位置到终止位置的全部内容,包括Html标签。
+- innerHTML 是所有浏览器都支持的。innerHTML是符合W3C标准的属性
+- outerHTML指的是除了包含innerHTML的全部内容外, 还包含对象标签本身。
+
+```javascript
+/*
+	<div id="div1">
+		<p>hello word</p>
+	</div>
+*/
+
+var div1 = document.getElementById("div1");
+console.log(div1.innerHTML); //<p>hello word</p>
+//用"+="操作符重复追加一小段文本通常效率低下，因为既要序列化又要解析
+```
+
+### 作为纯文本的元素内容
+
+- 有时需要查询纯文本形式的元素内容，或者在文档中插入纯文本（不必转义HTML标记中使用的尖括号和&符号）
+- textContent属性在除了IE的所有当前的浏览器中都支持
+
+```javascript
+div1.textContent = "hello world";
+```
+
+### 作为Text节点的元素内容
+
+- 从起始位置到终止位置的内容,但它去除Html标签。
+- innerText 是IE浏览器和chrome 浏览器支持的，Firefox浏览器不支持。innerText只适用于IE浏览器（现在也适应chrome浏览器）
+
+```javascript
+console.log(div1.innerText);//hello word
+```
+
+## 创建、插入和删除节点
+
+- Document类型定义了创建Element和Text对象的方法
+- Node类型定义了在节点数中插入、删除和替换的方法
+
+### 创建节点
+
+#### Element节点
+
+```javascript
+var p = document.createElement("p");
+```
+
+#### Text节点
+
+```javascript
+var text = document.createTextNode("text node content");
+```
+
+#### 文档片段
+
+```javascript
+var content = document.createDocumentFragment();
+```
+
+### 插入节点
+
+#### appendChild
+
+向节点添加最后一个子节点。也可以使用此方法从一个元素向另一个元素移动元素。
+
+```javascript
+var div1 = document.getElementById("div1");
+var p = document.createElement("p");
+
+div1.appendChild(p); //这两种方法都可以实现
+div1.insertBefore(p, null);
+```
+
+#### insertBefore
+
+在已有的字节点前中插入一个新的子节点。
+
+```javascript
+var div1 = document.getElementByTagName("div")[0];
+var last = div1.lastChild;
+var p = document.createElement("p");
+p.innerHTML = "this is p";
+
+div1.insertBefore(p, last);
+```
+
+### 删除和替换节点
+
+#### removeChild
+
+removeChild()方法是从文档树中删除一个节点。注意：该方法不是在待删除的节点上调用，而是在其父节点调用
+
+```javascript
+/*
+	<div>
+		<p>hello world</p>
+    </div>
+*/
+var p = document.getElementByTagName("p")[0];
+p.parentNode.removeChild(p);
+```
+
+#### replaceChild
+
+replaceChild()方法删除一个子节点并用一个新的节点取而代之。
+
+```javascript
+var p = document.getElementByTagName("p")[0];
+var h1 = document.createElement("h1");
+h1.innerHTML = "hello";
+
+p.parentNode.replaceChild(h1, p);
+```
+
+另外一种用法是： 用一个新的元素替换节点，并使该节点成为新元素的子节点
+
+# BOM
+
+## 计时器
+
+### setTimeout()
+
+用来实现一个函数在指定的毫秒数之后运行。
+
+
+
 # 事件
 
 ## 事件三要素
@@ -525,5 +946,48 @@ box.onclick = function(){ 程序 };  //程序 关于DOM的操作
 
 ## 事件有哪些
 
-![img](file:///C:\Users\admin\AppData\Local\Temp\ksohtml\wps25CC.tmp.jpg)
+| 事件名      | 说明                               |
+| ----------- | ---------------------------------- |
+| onclick     | 鼠标单击                           |
+| ondblclcik  | 鼠标双击                           |
+| onkeyup     | 按下并释放键盘上的一个键时触发     |
+| onchange    | 文本内容或下拉菜单中的选项发生改变 |
+| onfocus     | 获得焦点，表示文本框等获得鼠标光标 |
+| onblur      | 失去焦点，表示文本框等失去鼠标光标 |
+| onmouseover | 鼠标悬停，即鼠标停留在图片等的上方 |
+| onmouseout  | 鼠标移出，即离开图片等所在的区域   |
+| onload      | 网页文档加载事件                   |
+| onunload    | 关闭网页时                         |
+| onsubmit    | 表单提交事件                       |
+| onreset     | 重置表单时                         |
 
+## 事件类型
+
+- 3级DOM事件（DOM Level 3 Events）规范
+-  HTML5规范及相关衍生规范的大量新API定义了新事件，比如：历史管理、拖放、跨文档通信以及视频和音频的播放。
+- 基于触摸和支持JavaScript的移动设备的出现
+
+### 传统事件类型
+
+1. 表单事件
+2. window事件
+3. 鼠标事件
+4. 键盘事件
+
+### DOM事件
+
+
+
+# 收集箱
+
+火花线
+
+生成目录表
+
+
+
+笔记栏
+
+提示栏
+
+摘要栏

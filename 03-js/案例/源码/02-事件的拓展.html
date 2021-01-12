@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="btn">匿名绑定事件触发</button>
+    <button id="btn2">函数名绑定事件触发</button>
+    <button onclick="fn()">行内绑定事件触发</button>
+
+    <script type="text/javascript">
+        window.onload = function () {  
+            var btn = document.getElementById("btn");
+            var btn2 = document.getElementById("btn2");
+
+            //匿名绑定
+            btn.onclick = function () {  
+                console.log("匿名绑定事件触发");
+            }
+
+            //函数名绑定
+            function test() {
+                console.log("函数名绑定事件触发");
+            }
+
+            //不能写写括号，否则成为了返回值（2.用函数名绑定）
+            btn2.onclick = test;
+
+            //行内绑定
+            function fn(){
+                console.log("行内绑定事件触发了");
+            }
+        }
+
+        
+    </script>
+</body>
+</html>

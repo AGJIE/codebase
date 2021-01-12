@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="btn">触发事件</button>
+
+    <script type="text/javascript">
+        //体验事件
+        //1.事件源（引发后续事件的标签）
+        //2.事件（js已经定义好，直接使用）
+        //3.事件驱动程序（对样式和html的操作）（DOM操作）
+        window.onload = function() {
+            var btn = document.getElementById("btn");//1
+
+            btn.onclick = function () {  //2
+                console.log("事件触发");//3
+            }
+        }
+    </script>
+</body>
+</html>
