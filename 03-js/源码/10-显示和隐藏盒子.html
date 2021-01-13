@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style type="text/css">
+        div {
+            width: 100px;
+            height: 100px;
+            background-color: pink;
+        }
+        button {
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+    <button id="btn">隐藏</button>
+    <div>
+        临千仞之溪，非才长也，位高也！
+    </div>
+
+    <script type="text/javascript">
+        //需求：点击button,隐藏盒子。改变文字，在点击按钮，显示出来。
+        window.onload = function() {
+            var btn = document.getElementById("btn");
+            var div = document.getElementsByTagName("div")[0];
+
+            //判断btn的innerHTML属性值，如果为隐藏就隐藏盒子，并修改按钮内容为显示。
+            //反之，则显示，并修改按钮内容为隐藏
+            btn.onclick = function () {
+                if(this.innerHTML === "隐藏") {
+                    div.style.display = "none";
+                    btn.innerHTML = "显示";
+                } else {
+                    div.style.display = "block";
+                    btn.innerHTML = "隐藏";
+                }
+            }
+        }
+    </script>
+</body>
+</html>

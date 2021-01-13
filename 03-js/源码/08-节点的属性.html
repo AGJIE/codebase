@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <img src="image/jd1.png" class="box" title="图片" alt="京东狗" id="aaa"/>
+
+    <script type="text/javascript">
+        window.onload = function() {
+            var aaa = document.getElementById("aaa");
+
+             //属性、赋值获取两种方式
+            //1.元素节点.属性或者元素节点[属性]
+            aaa.src = "image/jd2.png";
+            aaa.id = "bbb";
+
+            console.log(aaa.src);
+            console.log(aaa.id);
+            console.log(aaa["title"]);
+            console.log(aaa["className"]);
+            console.log(aaa["alt"]);
+
+            //2.元素节点.方法();
+            console.log(aaa.getAttribute("class"));
+            aaa.setAttribute("id", "box2");
+            aaa.setAttribute("class", "img");
+
+            aaa.removeAttribute("class");
+        }
+    </script>
+</body>
+</html>

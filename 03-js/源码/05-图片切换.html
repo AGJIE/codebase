@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <img src="image/jd1.png" alt="" id="img">
+    </div>
+
+    <script type="text/javascript">
+        window.onload = function () {  
+            var img = document.getElementById("img");
+
+            function fn1() {  
+                img.src = "image/jd1.png";
+            }
+
+            function fn2() {  
+                img.src = "image/jd2.png";
+            }
+
+            img.onmouseover = fn2;
+            img.onmouseout = fn1;
+        }
+    </script>
+</body>
+</html>

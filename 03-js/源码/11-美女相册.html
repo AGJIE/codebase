@@ -57,23 +57,23 @@
     <a href="#">注册</a>
     <ul id="imagegallery">
         <li>
-            <a href="image2/1.jpg" title="美女A">
-                <img src="image2/1-small.jpg" width="100" alt="美女1"/>
+            <a href="image/1.jpg" title="美女A">
+                <img src="image/1-small.jpg" width="100" alt="美女1"/>
             </a>
         </li>
         <li>
-            <a href="image2/2.jpg" title="美女B">
-                <img src="image2/2-small.jpg" width="100" alt="美女2"/>
+            <a href="image/2.jpg" title="美女B">
+                <img src="image/2-small.jpg" width="100" alt="美女2"/>
             </a>
         </li>
         <li>
-            <a href="image2/3.jpg" title="美女C">
-                <img src="image2/3-small.jpg" width="100" alt="美女3"/>
+            <a href="image/3.jpg" title="美女C">
+                <img src="image/3-small.jpg" width="100" alt="美女3"/>
             </a>
         </li>
         <li>
-            <a href="image2/4.jpg" title="美女D">
-                <img src="image2/4-small.jpg" width="100" alt="美女4"/>
+            <a href="image/4.jpg" title="美女D">
+                <img src="image/4-small.jpg" width="100" alt="美女4"/>
             </a>
         </li>
     </ul>
@@ -81,7 +81,7 @@
     
     <div style="clear:both"></div>
     
-    <img id="image" src="image2/placeholder.png" width="450px"/>
+    <img id="image" src="image/placeholder.png" width="450px"/>
     
     <p id="des">选择一个图片</p>
 
@@ -95,7 +95,7 @@
             for(var i=0; i< links.length; i++){
                 links[i].onclick = function () {  
                     image.src = this.href;
-                    p.innerText = this.title;
+                    p.innerHTML = this.title;
                     return false;
                 }
             }

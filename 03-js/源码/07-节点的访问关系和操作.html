@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="box1">
+        <div class="box2" id="box"></div>
+        <div class="box3"></div>
+        <h1></h1>
+    </div>
+
+    <script type="text/javascript">
+        //节点的访问关系是以属性形式存在
+        //1.box1是box的父节点
+        var box2 = document.getElementsByClassName("box2")[0];
+        console.log(box2);
+        var box = document.getElementById("box");
+        console.log(box);
+        console.log(box.parentNode);
+
+        //2.nextElementSibling下一个兄弟节点
+        console.log(box.nextElementSibling);
+        //firstElementChild第一个子节点
+        console.log(box.parentNode.firstElementChild);
+
+        //所有子节点
+        console.log(box.parentNode.childNodes);
+        console.log(box.parentNode.children);
+
+        //节点的操作
+        //1.创建
+        var p1 = document.createElement("p");
+        console.log(p1);
+
+        //添加
+        box.appendChild(p1);
+        box.parentNode.insertBefore(p1, box);
+
+        
+        //删除
+        var h1 = document.getElementsByTagName("h1")[0];
+        box.parentNode.removeChild(h1);
+
+        //克隆
+        console.log(box.cloneNode());
+        console.log(box.cloneNode(true));
+    </script>
+</body>
+</html>

@@ -9,7 +9,7 @@
     <div>
         <a href="javascript:void(0);" id="btnImage">切换</a>
         <div>
-            <img src="image2/1-small.jpg" alt="美女" id="img">
+            <img src="image/1-small.jpg" alt="美女" id="img">
         </div>
     </div>
 
@@ -18,13 +18,14 @@
             var btnImage = document.getElementById("btnImage");
             var img = document.getElementById("img");
             var bool = true;
+
             btnImage.onclick = function () {
                 if(bool){
+                    img.src = "image/2-small.jpg";
                     bool = false;
-                    img.setAttribute("src", "image2/2-small.jpg");
                 } else {
+                    img.src = "image/1-small.jpg";
                     bool = true;
-                    img.setAttribute("src", "image2/1-small.jpg");
                 }
             }
         }
