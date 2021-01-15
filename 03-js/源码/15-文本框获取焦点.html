@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <label for="username">账号：</label>
+    <input type="text" id="username" value="请输入账号"/>
+    <br/>
+    <label for="pass">密码：</label>
+    <input type="password" id="pass" placeholder="请输入密码" />
+    
+    <script type="text/javascript">
+        window.onload = function () { 
+            //需求：京东的获取焦点。
+            //思路：input按钮获取了插入条光标立刻删除内容。失去插入条光标显示文字。 
+            var username = document.getElementById("username");
+
+            username.onfocus = function () {  
+                if(this.value === "请输入账号"){
+                    this.setAttribute("value", "");
+                }
+            }
+
+            username.onblur = function () {  
+                if(this.value === ""){
+                    this.setAttribute("value", "请输入账号");
+                }
+            }
+        }
+    </script>
+</body>
+</html>
