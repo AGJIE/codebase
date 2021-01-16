@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" />
+    <input type="text" />
+    <input type="text" />
+    <input type="text" />
+    <input type="text" />
+    <input type="text" />
+    <input type="text" />
+    <input type="text" />
+
+    <button>赋值</button>
+    <button>取值</button>
+
+    <script type="text/javascript">
+        window.onload = function(){
+            var inputs = document.getElementsByTagName("input");
+            var btn = document.getElementsByTagName("button");
+
+            btn[0].onclick = function(){
+                for(var i = 0; i < inputs.length; i++){
+                    inputs[i].value = i;
+                }
+            }
+
+            btn[1].onclick = function(){
+                var arr = [];
+                for(var i = 0; i < inputs.length; i++){
+                    arr.push(inputs[i].value);
+                }
+
+                var str = arr.join(",");
+                console.log(str);
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style type="text/css">
+        .bred {
+            border: 2px solid red;
+        }
+        .bblue {
+            border: 2px solid blue;
+        }
+    </style>
+</head>
+<body>
+    <label for="username">账号：</label>
+    <input type="text" id="username" />
+    <br/>
+    <label for="password">密码：</label>
+    <input type="password" id="pass" />
+
+    <script type="text/javascript">
+        window.onload = function() {
+            var username = document.getElementById("username");
+
+            username.onblur = function() {
+                if(this.value.length < 6 || this.value.length > 12){
+                    this.setAttribute("class", "bred");
+                } else {
+                    this.setAttribute("class", "bblue");
+                }
+            }
+        }
+    </script>
+</body>
+</html>
