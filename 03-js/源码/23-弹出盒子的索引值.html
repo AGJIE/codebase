@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style type="text/css">
+        button {
+            width: 100px;
+            height: 20px;
+            margin: 0 10px;
+            cursor: pointer;
+        }
+        .current {
+            background-color: yellow;
+        }
+    </style>
+</head>
+<body>
+    <button>1</button>
+    <button>2</button>
+    <button>3</button>
+    <button>4</button>
+    <button>5</button>
+
+    <script type="text/javascript">
+        window.onload = function () {  
+            //思路：给button添加一个index属性，
+
+            var btnList = document.getElementsByTagName("button");
+
+            for(var i = 0; i < btnList.length; i++){
+                btnList[i].index = i;
+                btnList[i].onmouseover = function () {  
+
+                    for(var j = 0; j < btnList.length; j++){
+                        btnList[j].className = "";
+                    }
+
+                    this.className = "current";
+                    console.log(this.index);
+                }
+            }
+        }
+    </script>
+</body>
+</html>

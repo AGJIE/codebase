@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style type="text/css">
+        body,div,ul,li{
+            padding: 0;
+            margin: 0;
+        }
+        .box {
+            width: 780px;
+            height: 627px;
+            margin: 90px auto 0;
+            border: 1px solid #ccc;
+        }
+        ul {
+            height: 62px;
+        }
+        li{
+            list-style: none;
+            float: left;
+            width: 156px;
+            height: 62px;
+            text-align: center;
+            line-height: 62px;
+            font-size: 22px;
+            font-family: "微软雅黑";
+            background-color: pink;
+        }
+        .nav-top{
+            background-color: yellow;
+        }
+        .box div {
+            height: 565px;
+            font-size: 300px;
+            text-align: center;
+            line-height: 565px;
+            background-color: yellow;
+        }
+        .show {
+            display: block;
+        }
+        .hide {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    
+    <div id="box" class="box">
+        <ul class="nav">
+            <li class="nav-top">鞋子</li>
+            <li>袜子</li>
+            <li>帽子</li>
+            <li>裤子</li>
+            <li>裙子</li>
+        </ul>       
+        <div class="show">鞋子</div> 
+        <div class="hide">袜子</div> 
+        <div class="hide">帽子</div> 
+        <div class="hide">裤子</div> 
+        <div class="hide">裙子</div> 
+    </div>
+</body>
+</html>
