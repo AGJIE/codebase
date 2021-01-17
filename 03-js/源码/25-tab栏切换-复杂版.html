@@ -44,31 +44,8 @@
         .current {
             background-color: yellow;
         }
-    </style>
 
-    <script>
-        window.onload = function () {
-            var boxArr = document.getElementsByClassName("box");
-            for(var i=0;i<boxArr.length;i++){
-                fn(boxArr[i]);
-            }
-            function fn(ele){
-                var liArr = ele.getElementsByTagName("li");
-                var spanArr = ele.getElementsByTagName("span");
-                for(var i=0;i<liArr.length;i++){
-                    liArr[i].index = i;
-                    liArr[i].onmouseover = function () {
-                        for(var j=0;j<liArr.length;j++){
-                            liArr[j].className = "";
-                            spanArr[j].className = "";
-                        }
-                        this.className = "current";
-                        spanArr[this.index].className = "show";
-                    }
-                }
-            }
-        }
-    </script>
+    </style>
 </head>
 <body>
 
@@ -116,6 +93,49 @@
         <span>裤子</span>
         <span>裙子</span>
     </div>
+
+    <div class="box">
+        <ul>
+            <li class="current">鞋子</li>
+            <li>袜子</li>
+            <li>帽子</li>
+            <li>裤子</li>
+            <li>裙子</li>
+        </ul>
+        <span class="show">鞋子</span>
+        <span>袜子</span>
+        <span>帽子</span>
+        <span>裤子</span>
+        <span>裙子</span>
+    </div>
+
+    <script type="text/javascript">
+        window.onload = function() {
+            var ul = document.getElementsByTagName("div");
+
+            for(var k = 0; k < ul.length; k++){
+                fn(ul[k]);
+            }
+
+            function fn(tag){
+                var list = tag.getElementsByTagName("li");
+                var spans = tag.getElementsByTagName("span");
+
+                for(var i = 0; i < list.length; i++) {
+                    list[i].index = i;
+                    list[i].onmouseover = function() {
+                        for(var j = 0; j < list.length; j++) {
+                            list[j].className = "";
+                            spans[k].className = "";
+                        }
+
+                        this.className = "current";
+                        spans[this.index].className = "show";
+                    }
+                }
+            }
+        }
+    </script>
 
 </body>
 </html>

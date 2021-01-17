@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        ul {
+            width: 1210px;
+            margin: 100px auto;
+        }
+        li {
+            height: 34px;
+            cursor: pointer;
+            font: 500 16px/34px "simsun";
+        }
+    </style>
+</head>
+<body>
+    <ul>
+        <li>北京股指  3063.31-22.18 (-0.72%)</li>
+        <li>上海股指  3063.31-22.18 (-0.72%)</li>
+        <li>广州股指  3063.31-22.18 (-0.72%)</li>
+        <li>深圳股指  3063.31-22.18 (-0.72%)</li>
+        <li>北京股指  3063.31-22.18 (-0.72%)</li>
+        <li>上海股指  3063.31-22.18 (-0.72%)</li>
+        <li>广州股指  3063.31-22.18 (-0.72%)</li>
+        <li>深圳股指  3063.31-22.18 (-0.72%)</li>
+    </ul>
+
+    <script type="text/javascript">
+        //简单版
+        window.onload = function() {
+            // var list = document.getElementsByTagName("li");
+
+            // for(var i = 0; i < list.length; i++){
+            //     if(i % 2 == 0){
+            //         list[i].style.backgroundColor = "blue";
+            //     }
+            // }
+
+            //复杂版
+            var list= document.getElementsByTagName("ul")[0].childNodes;
+            var newArr = [];
+
+            for(var j = 0; j < list.length; j++) {
+                if(list[j].nodeType == 1){
+                    newArr.push(list[j]);
+                }
+            }
+
+            console.log(newArr);
+            //隔行变色
+            for(var k = 0; k < newArr.length; k++){
+                if(k % 2 != 0){
+                    newArr[k].style.backgroundColor = "blue";
+                }
+            }
+
+        }
+    </script>
+</body>
+</html>

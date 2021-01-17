@@ -64,7 +64,26 @@
         <span>裙子</span>
     </div>
 
+    <script type="text/javascript">
+        window.onload = function() {
+            var ul = document.getElementsByTagName("ul")[0];
+            var list = ul.getElementsByTagName("li");
+            var spans = document.getElementsByTagName("span");
 
+            for(var i = 0; i < list.length; i++) {
+                list[i].index = i;
+                list[i].onmouseover = function() {
+                    for(var j = 0; j < list.length; j++) {
+                        list[j].className = "";
+                        spans[k].className = "";
+                    }
+
+                    this.className = "current";
+                    spans[this.index].className = "show";
+                }
+            }
+        }
+    </script>
 
 </body>
 </html>
