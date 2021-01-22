@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style type="text/css">
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        body {
+            background: url("image/1.jpg") no-repeat;
+        }
+    
+        .box {
+            height: 165px;
+            padding-top: 35px;
+            text-align: center;
+            background: rgba(255, 255, 255, 0.3);
+        }
+
+        img {    
+            float: left;
+            width: 200px;
+            height: 80px;
+            cursor: pointer;
+            margin: 0 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <img src="image/1.jpg" alt="">
+        <img src="image/2.jpg" alt="">
+        <img src="image/3.jpg" alt="">
+        <img src="image/4.jpg" alt="">
+        <img src="image/5.jpg" alt="">
+    </div>
+
+    <script>
+        window.onload = function() {
+            var imgs = document.getElementsByTagName("img");
+            var body = document.body;
+
+            for(var i = 0; i < imgs.length; i++) {
+                imgs[i].onclick = function() {
+                    body.style.backgroundImage = "url(" + this.src + ")";
+                }
+            }
+        }
+    </script>
+</body>
+</html>

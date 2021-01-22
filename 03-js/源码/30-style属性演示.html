@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="box" style="width: 100px;height: 100px;background-color: pink;">我爱你中国</div>
+
+
+    <script>
+        var div = document.getElementsByTagName("div")[0];
+
+        // 1.样式少的时候使用
+        div.style.backgroundColor = "red";
+
+        //    2.style是对象
+        console.log(typeof div.style);
+
+        //3.值是字符串，没有设置值是“”；
+        console.log(div.style.border);
+
+        //    4.命名规则，驼峰命名。和css不一样
+        console.log(div.style.backgroundColor);
+
+        //    5.设置了类样式不能获取。（只和行内式交互，和内嵌和外链无关）
+        console.log(div.className);
+
+        //    6.box.style.cssText = “字符串形式的样式”；
+        console.log(div.style.cssText);
+        div.style.cssText = "width: 200px; height: 200px; background-color: pink;";
+    </script>
+</body>
+</html>
