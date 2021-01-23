@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="box"></div>
+
+    <script>
+        window.onload = function(){
+            var box = document.getElementById("box");
+
+            box.style.cssText = "width: 200px; height: 200px; background-color: red";
+
+            box.onmouseover = function() {
+                // this.style.display = "none";
+                // this.style.opacity = "0";
+
+                this.style.visibility = "hidden";
+            }
+        }
+    </script>
+</body>
+</html>

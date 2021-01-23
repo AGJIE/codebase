@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button>创建</button>
+    <ul>
+        aaaaaa
+    </ul>
+    <script>
+            //第一种创建方式：document.write();
+            document.write("<li>我是document.write创建的</li>");
+
+            //第二种：直接利用元素的innerHTNL方法。（innerText方法不识别标签）
+            let btn = document.getElementsByTagName("button")[0]; 
+            let ul = document.getElementsByTagName("ul")[0];
+
+            ul.innerHTML += "<li>我是innerHTML创建的</li>";
+
+
+            //第三种：利用dom的api创建元素
+            let li = document.createElement("li");
+
+            li.innerHTML = "我是createElement创建的";
+            
+            ul.appendChild(li);
+
+        //document.write();不常用，因为容易覆盖原来的页面。
+        //innerHTML;用的比较多。绑定属性和内容比较方便。(节点套节点)
+        //document.createElement;也是比较多的，指定数量的时候一般用它。
+    </script>
+</body>
+</html>

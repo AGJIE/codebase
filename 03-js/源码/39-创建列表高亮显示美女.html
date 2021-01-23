@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button>创建</button>
+    <ul></ul>
+
+    <script>  
+        let btn = document.getElementsByTagName("button")[0];  
+        let ul = document.getElementsByTagName("ul")[0];
+        let arr = ["昭君出塞","西施浣纱","贵妃醉酒","貂蝉拜月"];
+
+        btn.onclick = function() {
+            for(let i = 0; i < arr.length; i++) {
+                let li = document.createElement("li");
+
+                li.innerHTML = arr[i];
+                ul.appendChild(li);
+            }
+
+            //获取所有的li标签然后，为他绑定事件，排他思想，高亮显示
+            let list = ul.children;
+
+            for(let j = 0; j < list.length; j++) {
+                list[j].onmouseover = function() {
+                    for(var k = 0; k < list.length; k++) {
+                        list[k].style.backgroundColor = "";
+                    }
+
+                    this.style.backgroundColor = "red";
+                }
+            }
+        }
+
+
+    </script>
+</body>
+</html>

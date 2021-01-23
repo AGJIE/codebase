@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style type="text/css">
+        select {
+            width: 200px;
+            height: 500px;
+            background-color: chartreuse;
+        }
+    </style>
+</head>
+<body>
+    <select name="" id="sel1" multiple>
+        <option value="">香蕉</option>
+        <option value="">苹果</option>
+        <option value="">鸭梨</option>
+        <option value="">葡萄</option>
+    </select>
+    <button><<<</button>
+    <button><</button>
+    <button>></button>
+    <button>>>></button>
+    <select name="" id="sel2" multiple>
+
+    </select>
+
+    <script>
+        window.onload = function() {
+            let rightAll = document.getElementsByTagName("button")[3];
+            let sel1 = document.getElementById("sel1");
+            let sel2 = document.getElementById("sel2");
+            let list = sel1.children;
+
+            rightAll.onclick = function() {
+                for(let i = list.length-1; i >= 0; i--) {
+                    sel2.appendChild(list[i]);
+                }
+            }
+        }
+    </script>
+</body>
+</html>
