@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style type="text/css">
+      .box1 {
+        width: 100px;
+        height: 100px;
+        border: 1px solid #F00;
+        background-color: #CF9;
+        float: left;
+      }
+      .box2 {
+        width: 200px;
+        height: 200px;
+        border: 1px solid #00F;
+        background-color: #FF6;
+        float: left;
+      }
+      .box3 {
+        width: 500px;
+        height: 500px;
+        border: 1px solid #C6C;
+        background-color: #C6C;
+        /* 清除浮动 */
+        clear: left; 
+      }
+    </style>
+  </head>
+  <body>
+    <!-- 
+        浮动foat浮动的框可以向左或向右移动,直到它的外边缘碰到包含框或另一个浮动框的边框为止由于浮动框不在文档的普通流中,所以文档的普通流中的块框表现得就像浮动框不存在一样。
+      
+        块状元素这么霸道都是独占一行，如果现在我们想让两个块状元素并排显示?
+        任何元素在默认情况下是不能浮动的，但可以用 CSS 定义为浮动，如 div、p、table、img 等元素都可以被定义为浮动
+     -->
+     <div class="box1"></div>
+     <div class="box2"></div>
+     <div class="box3"></div>
+
+  </body>
+</html>

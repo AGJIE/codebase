@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+    <style type="text/css">
+        .div1 {
+            width: 100px;
+            height: 100px;
+            background: red;
+            position: relative;
+            z-index: 1;
+        }
+        .div2 {
+            width: 100px;
+            height: 100px;
+            background: blue;
+            position: relative;
+            top: -50px;
+        }
+    </style>
+</head>
+<body>
+<!--
+    父元素的层级大于相邻的元素的层级，那么子元素无论级别多小，都大于父元素相邻的元素
+    普通流也具备层级关系
+-->
+    <div class="div1"></div>
+    <div class="div2"></div>
+</body>
+</html>

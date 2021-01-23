@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <style type="text/css">
+            div {
+                border: 2px red solid;
+            }
+        
+            #box1 {
+                width: 200px;
+                height: 200px;
+                position: relative;
+        
+            }
+        
+            #box2 {
+                position: absolute;
+                top: 20px;
+                left: 30px;
+        
+            }
+        
+            /*下面是任务部分*/
+            #box3 {
+                width: 200px;
+                height: 200px;
+                position: relative;
+            }
+        
+            #box4 {
+                width: 99%;
+                position:absolute;
+                bottom: 0px;
+            }
+            </style>
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+        <div id="box1">
+            <div id="box2">相对参照元素进行定位</div>
+        </div>
+        <h1>下面是任务部分</h1>
+        <div id="box3">
+            <img src="http://img.mukewang.com/541a7d8a00018cf102000200.jpg">
+            <div id="box4">当我还是三年级的学生时是一个害羞的小女生。</div>
+        </div>
+    </body>
+</html>

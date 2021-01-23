@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        .div1 {
+            width: 100px;
+            height: 100px;
+            background: red;
+            position: relative;
+            top: 50px;
+            left: 0;
+        }
+        .div2 {
+            width: 100px;
+            height: 100px;
+            background: blue;
+            position: relative;
+            top: 0;
+            left: 0;
+        }
+    </style>
+</head>
+<body>
+<!--
+    相对定位仍然处于文档流中，可通过top,button,left,right改变元素位置，
+    后写的元素会覆盖先写的元素，后写的带有定位属性的层级大于先写的带有定位属性的层级，有了定位可以相互覆盖
+-->
+<div class="div1"></div>
+<div class="div2"></div>
+</body>
+</html>

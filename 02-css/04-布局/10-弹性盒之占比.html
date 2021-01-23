@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <style type="text/css">
+            .box {
+                height: 300px;
+                background: blue;
+                display: flex;
+            }
+        
+            .box div {
+                width: 200px;
+                height: 200px;
+            }
+        
+            .box1 {
+                flex: 1;
+                background: red;
+            }
+        
+            .box2 {
+                flex: 3;
+                background: orange;
+            }
+        
+            .box3 {
+                flex: 2;
+                background: green;
+            }
+            </style>
+    </head>
+    <body>
+        <!-- 
+             技术点的解释：
+                1、给子元素设置flex属性,可以设置子元素相对于父元素的占比。
+                2、flex属性的值只能是正整数,表示占比多少。
+                3、给子元素设置了flex之后,其宽度属性会失效。
+
+         -->
+        
+        <div class="box">
+            <div class="box1"></div>
+            <div class="box2"></div>
+            <div class="box3"></div>
+        </div>
+    </body>
+</html>

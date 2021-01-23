@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title></title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style>
+      div {
+        border: 1px solid red;
+        margin: 20px;
+      }
+      .txtCenter {
+        text-align: center;
+      }
+      .imgCenter {
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- 
+            分两种情况：
+                行内元素
+                块状元素 ，
+                    定宽块状元素
+                    不定宽块状元素。
+
+            被设置元素为文本、图片等行内元素时，水平居中是通过给父元素设置 text-align:center 来实现的。
+            (父元素和子元素：如下面的html代码中，div是“我想要在父容器中水平居中显示”这个文本的父元素。反之这个文本是div的子元素 )
+         -->
+    <div class="txtCenter">我想要在父容器中水平居中显示。</div>
+    <div class="imgCenter">
+      <img src="http://img.mukewang.com/52da54ed0001ecfa04120172.jpg" />
+    </div>
+  </body>
+</html>

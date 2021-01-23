@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <style type="text/css">
+            #box1 {
+                width: 300px;
+            }
+        </style>
+    </head>
+    <body>
+        <!-- 
+            CSS3包含3种基本的布局模型，用英文概括为：Flow、Layer 和 Float。
+            在网页中，元素有三种布局模型：
+                1、流动模型（Flow）
+                2、浮动模型 (Float)
+                3、层模型（Layer）
+                
+            流动模型，流动（Flow）是默认的网页布局模式。也就是说网页在默认状态下的 HTML 网页元素都是根据流动模型来分布网页内容的。
+
+            流动布局模型具有2个比较典型的特征：
+
+            第一点，块状元素都会在所处的包含元素内自上而下按顺序垂直延伸分布，因为在默认状态下，块状元素的宽度都为100%。实际上，块状元素都会以行的形式占据位置。如右侧代码编辑器中三个块状元素标签(div，h1，p)宽度显示为100%。
+    
+            第二点，在流动模型下，内联元素都会在所处的包含元素内从左到右水平分布显示。（内联元素可不像块状元素这么霸道独占一行）
+            内联元素标签a、span、em、strong都是内联元素。
+
+         -->
+         <div id="box2">box2</div>
+         <!--块状元素，由于没有设置宽度，宽度默认显示为100%-->
+         <h1>标题</h1>
+         <!--块状元素，由于没有设置宽度，宽度默认显示为100%-->
+         <p>文本段文本段文本段文本段文本段文本段文本段文本段文本段文本段文本段文本段文本段文本段文本段文本段文本段。</p>
+         <!--块状元素，由于没有设置宽度，宽度默认显示为100%-->
+         <div id="box1">box1</div>
+         <!--块状元素，由于设置了width:300px，宽度显示为300px-->
+         <a href="http://www.imooc.com">www.imooc.com</a><span>强调</span><em>重点</em>
+         <strong>文本</strong>
+    </body>
+</html>
