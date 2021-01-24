@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .highlight {
+            color: #dd1144;
+            background-color: #ffd351;
+        }
+    </style>
+</head>
+<body> 
+    <div id="test-highlight-css">
+        <ul>
+            <li class="py"><span>Python</span></li>
+            <li class="js highlight"><span>JavaScript</span></li>
+            <li class="sw"><span>Swift</span></li>
+            <li class="hk"><span>Haskell</span></li>
+        </ul>
+    </div>
+
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/1.12.4/jquery.js"></script>
+    <script>
+        $(function () {
+            // $("#test-highlight-css ul li.js").css({
+            //     "color": "#dd1144",
+            //     "background-color": "#ffd351",
+            // })
+
+            // $("#test-highlight-css ul li.js").addClass("highlight");
+
+            // $("#test-highlight-css ul li.js").removeClass("highlight");
+
+            $("#test-highlight-css ul li.js").hasClass("highlight");
+        })
+    </script>
+</body>
+</html>

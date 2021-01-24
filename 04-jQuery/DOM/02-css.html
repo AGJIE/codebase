@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul id="test-css">
+        <li class="lang dy"><span>JavaScript</span></li>
+        <li class="lang"><span>Java</span></li>
+        <li class="lang dy"><span>Python</span></li>
+        <li class="lang"><span>Swift</span></li>
+        <li class="lang dy"><span>Scheme</span></li>
+    </ul>
+    
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/1.12.4/jquery.js"></script>
+    <script>
+        //jQuery对象有“批量操作”的特点，这用于修改CSS实在是太方便了。
+
+        //注意，jQuery对象的所有方法都返回一个jQuery对象（可能是新的也可能是自身），这样我们可以进行链式调用，非常方便。
+
+        //为了和JavaScript保持一致，CSS属性可以用'background-color'和'backgroundColor'两种格式。
+        $(function(){
+            $("#test-css li.dy>span").css("background-color", "#ffd351").css("background-color", "red");
+
+        })
+    </script>
+</body>
+</html>
