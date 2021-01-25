@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="test-div">
+        <ul>
+            <li><span>JavaScript</span></li>
+            <li><span>Python</span></li>
+            <li><span>Swift</span></li>
+        </ul>
+    </div>
+
+
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/1.12.4/jquery.js"></script>
+    <script>
+        /*
+        删除节点
+
+        要删除DOM节点，拿到jQuery对象后直接调用remove()方法就可以了。如果jQuery对象包含若干DOM节点，实际上可以一次删除多个DOM节点：
+        */
+        $("#test-div>ul").remove();
+    </script>
+</body>
+</html>

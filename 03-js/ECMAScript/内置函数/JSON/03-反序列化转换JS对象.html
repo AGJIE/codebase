@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        var str = '{"name":"小明","age":14}';
+
+        // var obj = JSON.parse(str);
+        // console.log(typeof obj);
+        // console.log(obj.name);
+
+        //传入一个函数，这样对象的每个键值对都会被函数先处理
+        function updateStr(key, value) {
+            if(typeof value === "string") {
+                return value + "同学";
+            }
+
+            return value;
+        }
+
+        var obj2 = JSON.parse(str, updateStr);
+        console.log(obj2);
+
+    </script>
+</body>
+</html>

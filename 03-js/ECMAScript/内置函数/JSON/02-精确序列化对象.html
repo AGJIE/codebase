@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        var xiaoming = {
+            name: '小明',
+            age: 14,
+            gender: true,
+            height: 1.65,
+            grade: null,
+            'middle-school': '\"W3C\" Middle School',
+            skills: ['JavaScript', 'Java', 'Python', 'Lisp'],
+            toJSON: function() {
+                return {
+                    "Name": this.name,
+                    "Age": this.age,
+                }
+            }
+        };
+
+        var str = JSON.stringify(xiaoming); // '{"Name":"小明","Age":14}'
+        console.log(str);
+    </script>
+</body>
+</html>

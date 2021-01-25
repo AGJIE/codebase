@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style type="text/css">
+        div {
+            width: 200px;
+            height: 200px;
+            background-color: blueviolet;
+        }
+    </style>
+</head>
+<body>
+    <div id="test-div" name="Test" >犯人在跳舞</div>
+    
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/1.12.4/jquery.js"></script>
+    <script>
+        $(function() {
+            //attr()和removeAttr()方法用于操作DOM节点的属性：
+            //获取
+            var attr = $("#test-div").attr("name");
+            //设置与修改
+            $("#test-div").attr("name", "div1");
+            //删除
+            $("#test-div").removeAttr("name");
+
+            console.log(attr);
+        })
+    </script>
+</body>
+</html>

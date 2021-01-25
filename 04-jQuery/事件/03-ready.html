@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <script>    
+        //ready仅作用于document对象。由于ready事件在DOM完成初始化后触发，且只触发一次，所以非常适合用来写其他的初始化代码。
+
+        //第一种写法
+        $(document).on('ready', function () {
+           
+        });
+
+        //第二种写法
+        $(document).ready(function () {
+            // on('submit', function)也可以简化:
+        });
+
+        //第三种写法
+        $(function () {
+            // init...
+        });
+    </script>
+</body>
+</html>

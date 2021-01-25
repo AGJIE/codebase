@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <a href="#" id="btn">点我试试</a>
+
+
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/1.12.4/jquery.js"></script>
+    <script>
+        /*
+            更简化的写法是直接调用click()方法：
+
+            两者完全等价。我们通常用后面的写法。
+
+            jQuery能够绑定的事件主要包括：
+                click: 鼠标单击时触发；
+                dblclick：鼠标双击时触发；
+                mouseenter：鼠标进入时触发；
+                mouseleave：鼠标移出时触发；
+                mousemove：鼠标在DOM内部移动时触发；
+                hover：鼠标进入和退出时触发两个函数，相当于mouseenter加上mouseleave。
+
+            键盘事件
+                键盘事件仅作用在当前焦点的DOM上，通常是<input>和<textarea>。
+
+                keydown：键盘按下时触发；
+                keyup：键盘松开时触发；
+                keypress：按一次键后触发。         
+                
+            其他事件
+                focus：当DOM获得焦点时触发；
+                blur：当DOM失去焦点时触发；
+                change：当<input>、<select>或<textarea>的内容改变时触发；
+                submit：当<form>提交时触发；
+                ready：当页面被载入并且DOM树完成初始化后触发。
+
+            ready仅作用于document对象。由于ready事件在DOM完成初始化后触发，且只触发一次，所以非常适合用来写其他的初始化代码。
+            
+            如果你遇到$(function () {...})的形式，牢记这是document对象的ready事件处理函数。
+        */
+        $(function(){
+            $("#btn").click(function(){
+                alert("诺丁汉警长");
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style type="text/css">
+        div {
+            width: 200px;
+            height: 200px;
+            background-color: blueviolet;
+        }
+    </style>
+</head>
+<body>
+    <input id="test-input" name="email" value="">
+    <select id="test-select" name="city">
+        <option value="BJ" selected>Beijing</option>
+        <option value="SH">Shanghai</option>
+        <option value="SZ">Shenzhen</option>
+    </select>
+    <textarea id="test-textarea">Hello</textarea>
+    
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/1.12.4/jquery.js"></script>
+    <script>
+        $(function() {
+            //对于表单元素，jQuery对象统一提供val()方法获取和设置对应的value属性：
+            var input = $("#test-input");
+            var select = $("#test-select");
+            var textarea = $("#test-textarea");
+
+            input.val("981778113@qq.com");
+            select.val();//BJ
+            select.val("SH"); //选择框已经是Shanghei
+            textarea.val("犯人在跳舞");
+        })
+    </script>
+</body>
+</html>

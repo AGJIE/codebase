@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style type="text/css">
+        div {
+            width: 200px;
+            height: 200px;
+            background-color: blueviolet;
+        }
+    </style>
+</head>
+<body>
+    <div>犯人在跳舞</div>
+    
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/1.12.4/jquery.js"></script>
+    <script>
+        $(function() {
+           // 浏览器可视窗口大小:
+            var width = $(window).height();
+            var height = $(window).width();
+
+            console.log(width);
+            console.log(height);
+           // HTML文档大小:
+            var width2 = $(document).height();
+            var height2 = $(document).width();
+
+            console.log(width2);
+            console.log(height2);
+           // 某个div的大小:
+
+           var width3 =  $("div").width();
+           var height3 = $("div").height();
+
+           console.log(width3);
+           console.log(height3);
+        })
+    </script>
+</body>
+</html>
