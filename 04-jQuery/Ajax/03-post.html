@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style type="text/css">
+        div {
+            width: 200px;
+            height: 200px;
+            background-color: blueviolet;
+        }
+    </style>
+</head>
+<body>
+    
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/1.12.4/jquery.js"></script>
+    <script>
+       /*
+          post
+
+            post()和get()类似，但是传入的第二个参数默认被序列化为application/x-www-form-urlencoded
+            实际构造的数据name=Bob%20Lee&check=1作为POST的body被发送。
+        */
+       $(function() {
+            var jqxhr = $.post('/path/to/resource', {
+                name: 'Bob Lee',
+                check: 1
+            });
+       });
+    </script>
+</body>
+</html>

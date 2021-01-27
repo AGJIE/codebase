@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style type="text/css">
+        div {
+            width: 200px;
+            height: 200px;
+            background-color: blueviolet;
+        }
+    </style>
+</head>
+<body>
+    <button id="btn1">显示</button>
+    <button id="btn2">隐藏</button>
+    <button id="btn3">切换</button>
+    <div id="div1">犯人在跳舞</div>
+    
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/1.12.4/jquery.js"></script>
+    <script>
+       /*
+        fadeIn()和fadeOut()的动画效果是淡入淡出，也就是通过不断设置DOM元素的opacity属性来实现，
+        而fadeToggle()则根据元素是否可见来决定下一步动作
+       
+       */
+       $(function() {
+            var div1 = $("#div1");
+            var btn1 = $("#btn1");
+            var btn2 = $("#btn2");
+            var btn3 = $("#btn3");
+            
+            btn1.on("click", function() {
+                div1.fadeIn(3000);
+            });
+
+            btn2.on("click", function() {
+                div1.fadeOut(3000);
+            })
+
+            btn3.on("click", function() {
+                div1.fadeToggle(3000);
+            });
+       });
+    </script>
+</body>
+</html>

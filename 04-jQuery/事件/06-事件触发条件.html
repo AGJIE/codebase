@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style type="text/css">
+        div {
+            width: 300px;
+            height: 300px;
+        }
+    </style>
+</head>
+<body>
+    <button id="btn">点击</button>
+
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/1.12.4/jquery.js"></script>
+
+    <script>    
+
+        $(function () {
+         /*
+            事件触发条件
+                一个需要注意的问题是，事件的触发总是由用户操作引发的。
+
+            当用户在文本框中输入时，就会触发change事件。但是，如果用JavaScript代码去改动文本框的值，将不会触发change事件：
+
+            有些时候，我们希望用代码触发change事件，可以直接调用无参数的change()方法来触发该事件：
+
+            input.change()相当于input.trigger('change')，它是trigger()方法的简写。
+
+            为什么我们希望手动触发一个事件呢？如果不这么做，很多时候，我们就得写两份一模一样的代码。
+         */
+        });
+    </script>
+</body>
+</html>

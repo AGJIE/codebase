@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style type="text/css">
+        div {
+            width: 100px;
+            height: 100px;
+            background-color: pink;
+        }
+        button {
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+    <button id="btn">隐藏</button>
+    <div id="div1">
+        临千仞之溪，非才长也，位高也！
+    </div>
+
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/1.12.4/jquery.js"></script>
+    <script type="text/javascript">
+        //需求：点击button,隐藏盒子。改变文字，在点击按钮，显示出来。
+        $(function() {
+            var $btn = $("#btn");
+            var $div1 = $("#div1");
+
+            $btn.on("click", function() {
+                if($btn.text() === "隐藏"){
+                    $div1.hide();
+                    $btn.text("显示");
+                } else {
+                    $div1.show();
+                    $btn.text("隐藏");
+                }
+            })
+        });
+    </script>
+</body>
+</html>

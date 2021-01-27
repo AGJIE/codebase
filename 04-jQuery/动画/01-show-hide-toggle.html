@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style type="text/css">
+        div {
+            width: 200px;
+            height: 200px;
+            background-color: blueviolet;
+        }
+    </style>
+</head>
+<body>
+    <button id="btn1">显示</button>
+    <button id="btn2">隐藏</button>
+    <button id="btn3">切换</button>
+    <div id="div1">犯人在跳舞</div>
+    
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/1.12.4/jquery.js"></script>
+    <script>
+       //直接以无参数形式调用show()和hide()，会显示和隐藏DOM元素。但是，只要传递一个时间参数进去，就变成了动画
+       //时间以毫秒为单位，但也可以是'slow'，'fast'这些字符串
+       //toggle()方法则根据当前状态决定是show()还是hide()。
+       //show()和hide()是从左上角逐渐展开或收缩的
+
+       $(function() {
+            var div1 = $("#div1");
+            var btn1 = $("#btn1");
+            var btn2 = $("#btn2");
+            var btn3 = $("#btn3");
+            
+            btn1.on("click", function() {
+                div1.show(3000);
+            });
+
+            btn2.on("click", function() {
+                div1.hide(3000);
+            })
+
+            btn3.on("click", function() {
+                div1.toggle(3000);
+            });
+       });
+    </script>
+</body>
+</html>
