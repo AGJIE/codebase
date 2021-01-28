@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        //window是bom的顶级对象。通常情况下，可以省略
+        //    window.alert(1);
+        //    alert(2);
+        //    prompt();
+        //    confirm();
+
+
+        //    //成员变量也是window的一个属性而已
+        //    var aaa = 1;
+        //    alert(aaa);
+        //    alert(window.aaa);
+        //    alert(aaa === window.aaa);
+
+            //自定义函数也是window的一个方法
+        function fn(){
+            console.log(1);
+            console.log(1);
+            console.log(1);
+            console.log(1);
+        }
+
+        window.fn();
+        console.log(window.fn);
+    </script>
+</body>
+</html>
