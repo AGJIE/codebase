@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="div1">
+        <p id="p1">
+            <button onclick="alert('1')">点击</button>
+        </p>
+    </div>
+
+    <script>
+        var div1 = document.getElementById("div1");
+        var p1 = document.getElementById("p1");
+
+        div1.addEventListener("click", function(){
+            event.target.innerHTML = "你好";
+        });
+
+        p1.onclick = function(){
+            event.stopImmediatePropagation();
+        }
+
+        p1.onmouseover = function(){
+           console.log(11);
+        }
+    </script>
+</body>
+</html>
