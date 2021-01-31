@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="btn">触发多个事件</button>
+
+    <script>
+        var btn = document.getElementById("btn");
+
+        btn.addEventListener("click", fn1);
+        btn.addEventListener("click", fn2);
+
+        function fn1() {  
+            alert("111");
+        }
+
+        function fn2() {  
+            alert("222");
+        }
+    </script>
+</body>
+</html>

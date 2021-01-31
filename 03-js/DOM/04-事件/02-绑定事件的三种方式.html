@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="alert('11')">第一种方式</button>
+    <button id="btn">第二种方式</button>
+    <button id="btn2">第三种方式</button>
+
+    <script>
+        var btn = document.getElementById("btn");
+        var btn2 = document.getElementById("btn2");
+
+        btn.onclick = function () {  
+            alert("222");
+        }
+
+        btn2.addEventListener("click", function () {  
+            alert("333");
+            console.log(event);
+        });
+    </script>
+
+</body>
+</html>
