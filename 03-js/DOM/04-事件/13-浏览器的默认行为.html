@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <a href="https://www.baidu.com" onclick="return false">百度</a>
+    <a href="https://www.baidu.com" id="url1">百度</a>
+
+    <script>
+         window.onclick = function(){
+             var url1 = document.getElementById("url");
+
+             url1.addEventListener("click", function(event) {
+                 event.preventDefault();
+             });
+         }
+    </script>
+</body>
+</html>

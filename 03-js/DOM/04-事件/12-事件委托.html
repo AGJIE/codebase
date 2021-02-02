@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style type="text/css">
+        * {
+            padding: 0;
+            margin: 0;
+        }
+        div {
+            width: 800px;
+            height: 800px;
+        }
+        tr,td {
+            width: 200px;
+            height: 200px;
+            text-align: center;
+            line-height: 200px;
+        }
+        .colorRed {
+            background-color: red;
+        }
+        .colorBlue {
+            background-color: blue;
+        }
+        .colorYellow {
+            background-color: yellow;
+        }
+        .colorYellowgreen {
+            background-color: yellowgreen;
+        }
+        .colorPink {
+            background-color: pink;
+        }
+        .colorSalmon {
+            background-color: salmon;
+        }
+        .colorSienna {
+            background-color: sienna;
+        }
+        .colorSkyblue {
+            background-color: skyblue;
+        }
+        .colorThistle {
+            background-color: thistle;
+        }
+        .colorBlack {
+            background-color: black;
+        }
+    </style>
+</head>
+<body>
+    <table id="list">
+        <tr>
+            <td class="colorRed">1</td>
+            <td class="colorBlue">2</td>
+            <td class="colorYellow">3</td>
+        </tr>
+        <tr>
+            <td class="colorYellowgreen">4</td>
+            <td class="colorPink">5</td>
+            <td class="colorSalmon">6</td>
+        </tr>
+        <tr>
+            <td class="colorSienna">7</td>
+            <td class="colorSkyblue">8</td>
+            <td class="colorThistle">9</td>
+        </tr>
+    </table>
+
+    <script>
+        window.onload = function() {
+            var list = document.getElementById("list");
+
+            let selectId;
+
+            list.addEventListener("click", function(event){
+                var tagId = event.target;
+
+                console.log(tagId.nodeName);
+                if(tagId.nodeName != "TD") {
+                    return;
+                }
+
+                updateTag(tagId);
+            });
+
+            function updateTag(target) {
+                if(selectId) {
+                    selectId.classList.remove("colorBlack");
+                }
+
+                selectId = target;
+                target.classList.add("colorBlack");
+            }
+        }
+    </script>
+</body>
+</html>
